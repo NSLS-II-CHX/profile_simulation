@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import databroker
 from databroker import Broker
-from srw_handler import SRWFileHandler
+from srw_handler import SRWFileHandler, read_srw_file
 
 plt.ion()
 
