@@ -8,6 +8,7 @@ def read_srw_file(filename):
     return {'data': data,
             'shape': data.shape,
             'mean': np.mean(data),
+            'total': np.sum(data),
             'photon_energy': ranges[0],
             'horizontal_extent': ranges[3:5],
             'vertical_extent': ranges[6:8],
