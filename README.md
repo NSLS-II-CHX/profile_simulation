@@ -15,7 +15,7 @@ How to use:
 - Specify the detector distance:
   `srw_writer.update_distance(16.046)`
 - Count the simulated detector:
-` `RE(bp.count([srw_writer]), Simulation='random posts (SRW)')`
+  `RE(bp.count([srw_writer]), Simulation='random posts (SRW)')`
 
 ### Get data back as a NumPy array:
 ```python
