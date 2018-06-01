@@ -93,7 +93,13 @@ class SRWFileWriter(Device):
         max_pos = np.where(ret['data'] == ret['data'].max())
         self.beam_center_x.put(max_pos[1][0])  # [pixels]
         self.beam_center_y.put(max_pos[0][0])  # [pixels]
-        self.wavelength.put(xfuncs.get_Lambda(ret['photon_energy'] / 1e3, 'A'))  # [Angstroms]
+
+        try:
+            wavelength = xfuncs.get_Lambda(ret['photon_energy'] / 1e3, 'A')  # [Angstroms]
+        except:
+            wavelength = 0
+
+        self.wavelength.put(wavelength)
         self.det_distance.put(self._distance)  # [m]
 
         self._resource_id = self.reg.insert_resource('srw', self.persistent_file, {})
